@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "e36f8dcb-e9ce-4e40-8085-800d03abdea1",
+		"name": "Cryptocurrency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/wallet/create-transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"c6c86927c28a49a6347be4e384f9650a97db7f659ddca901b2f005b42ceb2622\",\r\n    \"transaction\":{\r\n        \"recieverAdress\":\"d5cc439885147cdc19d68e0b480cb5fe0890ce913e2a69e9c57b707937d1b6d3\",\r\n        \"amount\":\"100.00\",\r\n        \"tax\":\"0.10\",\r\n        \"total\":\"100.10\",\r\n        \"transactionType\": \"EXCHANGE\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/wallet/create-transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"wallet",
+						"create-transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/cryptocurrency/verify-signatured-transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"0b33a092225396f9839104b30d764817cee472f0b3aeef404324984136926dd4\",\r\n    \"senderAdress\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl48+/E+HU3iltAC6WpLaYrT7oafHbYlz7jKSqXJ5fWUK1xmrfL74DS0v1aWjZotzhEsj9mSYwL3wp9hDcvbb5wdDYqFhvSLdpcPeu0srkLZ8K+SXiezZ7c+YpyGFJFEuZdx5nIYTsUqVFy5ELZZP/jI0favs8tTpp+RkIRwGciTCtyyP684iuMSXJ1Y0dGnAoJsPBenKOozz4DVC135kZsZCwRrc2O4WsblgJfBPoOA7Yft7AvJN1jaKhyS5E0vXCJWCPu3wX8bTiWSlTb9Wfetr70Qco7myjjwexWXBDSU9HFHrNMSAJnxAPImA5ao98ebuTUzZYw7fvPWLD2ARrQIDAQAB\",\r\n    \"recieverAdress\": \"d5cc439885147cdc19d68e0b480cb5fe0890ce913e2a69e9c57b707937d1b6d3\",\r\n    \"timestamp\": 1656420140252,\r\n    \"enumTransactionType\": \"EXCHANGE\",\r\n    \"amount\": 100.00,\r\n    \"tax\": 0.10,\r\n    \"total\": 100.10,\r\n    \"signaturedTransaction\": \"e89RUjVZ64OJMIk0C/9XnnlY6HXFVwy5Zkh2Y5FQYcXQuiR2SddYvzLzZUDq9W/bhnFf6UN2Py4bnos8M1q5+40IRdTlrExa27ZBx6Djcmj+SiQVWVvpUFExUcVgpCVjX57uNcEUgBDmzo3MTzTTydSZ4ev6hHwR92XPzp95o57jBRm2IO1Y30TozIGQy/DwdwULXzgrNVvF6Yv3qXGL8C77hgfrDVwwaXiHw/cEiqXVFPvdrv755SZOcqm7eYhfnrh1McPjW8VHyFLdAwLuGlSzAwnbNM9ywWsJBF4yaZ3EXDrAz1ncztIbAE2MDYj6r0U0FYeAMc+B/gVzSwjS+g==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/cryptocurrency/verify-signatured-transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cryptocurrency",
+						"verify-signatured-transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/wallet/generate-wallet/26cb07a30f27bd0f1ace9c372a57afe28ed535554acba962004f38236b14b7af",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/wallet/generate-wallet/26cb07a30f27bd0f1ace9c372a57afe28ed535554acba962004f38236b14b7af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"wallet",
+						"generate-wallet",
+						"26cb07a30f27bd0f1ace9c372a57afe28ed535554acba962004f38236b14b7af"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
