@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.12</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>br.com.cryptocurrency</groupId>
+	<artifactId>crypto-currency</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>crypto-currency</name>
+	<description>A crypto-currency based on blockchain ecosystem
+	</description>
+	<inceptionYear>2022</inceptionYear>
+
+	<properties>
+		<java.version>11</java.version>
+		<springfox.version>3.0.0</springfox.version>
+		<spring-cloud.version>2020.0.3</spring-cloud.version>
+		<log4j2.version>2.16.0</log4j2.version>
+	</properties>
+
+	<developers>
+		<developer>
+			<name>Thiago Pellegrino</name>
+			<id>thiagopellegrino</id>
+			<email>tiagopellegrino@gmail.com</email>
+			<organization>-</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>MIT</name>
+		</license>
+	</licenses>
+
+	<modules>
+		<module>blockchain</module>
+		<module>wallet</module>
+		<module>miner</module>
+		<module>node-network</module>
+		<module>events</module>
+		<module>repository</module>
+		<module>domain</module>
+		<module>service-bus</module>
+		<module>wallets</module>
+		<module>user</module>
+	</modules>
+
+	<dependencies>
+		<!-- Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- Websocket -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-okhttp</artifactId>
+			<version>10.2.0</version>
+		</dependency>
+		<!-- SQLite -->
+		<!-- dependency> <groupId>org.xerial</groupId> <artifactId>sqlite-jdbc</artifactId> 
+			<version>3.25.2</version> </dependency -->
+		<!-- Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.8</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

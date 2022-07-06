@@ -1,0 +1,51 @@
+#################################################
+################### FEIGN #######################
+spring.main.allow-bean-definition-overriding: true
+
+feign:
+  okhttp.enabled: true
+  httpclient:
+    disableSslValidation: true
+    enabled: false
+    max-connections: 400
+    max-connections-per-route: 400
+    connection-timeout: 1000
+    ok-http.read-timeout: 10000
+
+#################################################
+################### CLIENTS #####################
+
+clients:
+  nodenetwork:
+    name: node
+    url: localhost:8082
+        
+#################################################
+################### SWAGGER #####################
+
+springfo.documentatio.swagger.useModelV3: false
+
+swagger:
+  basePackage: br.com.cryptocurrency.servicebus.entrypoint.resource
+  version: 0.0.1-SNAPSHOT
+  title: Comunication API between node-network.
+  description: API detail to integrate the crypto currency based on blockchain ecosystem.
+  license: MIT
+  licenseUrl: http://...
+  termsOfServiceUrl: https://.../...
+  contactName: ... - ...
+  contactUrl: https://...
+  contactEmail: ...@...
+
+#################################################
+################## SERVER #######################
+
+server:
+  port: 8082
+  max-http-header-size: 48000
+  parallelism: 200
+  
+management:
+  endpoints.web.exposure.include: info, health, mapping
+  endpoint.health.show-details: always
+  health.diskspace.enabled: false

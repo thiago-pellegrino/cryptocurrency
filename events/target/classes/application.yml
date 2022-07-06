@@ -1,0 +1,16 @@
+#################################################
+############# ARTEMIS + ACTIVEMQ ################
+#spring:
+  #artemis:
+  #  mode: embedded
+  #  host: localhost
+  #  port: 61616
+  #  embedded:
+  #    enabled: true     
+                   
+  #activemq:
+  #  in-memory: true
+  #  pool.enabled: false
+    
+server:
+  port: 8081

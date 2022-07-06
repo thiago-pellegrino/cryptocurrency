@@ -1,0 +1,14 @@
+spring.main.allow-bean-definition-overriding: true
+   
+#################################################
+################## SERVER #######################
+
+server:
+  port: 8081
+  max-http-header-size: 48000
+  parallelism: 200
+  
+management:
+  endpoints.web.exposure.include: info, health, mapping
+  endpoint.health.show-details: always
+  health.diskspace.enabled: false
